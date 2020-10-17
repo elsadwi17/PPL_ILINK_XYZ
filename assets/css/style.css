@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+*{
+    font-size: 1vw;
+    font-family: 'Montserrat';
+    padding: 0;
+    margin: 0;
+}
+img{
+    object-fit: fill;
+}
+html, body {
+    height: 100%;
+}
+html{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+/* navbar */
+#navbar{
+    background-color: #00b894;
+    position: fixed;
+    width: 100%;
+}
+#navbar #logo img {
+    float: left;
+    padding: 1.5em 2em;
+    width: 10em;
+    height: auto;
+}
+
+#content{
+    position: relative;
+    min-height: 100%;
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+}
+
+.wrap{
+    padding: 3%;
+    width: 40%;
+}
+
+.kepala{
+text-align: center;
+}
+.kepala .logo {
+    height: 32%;
+    width: 32%;
+    border-radius: 50%;
+    margin-bottom: 1.25em;
+    border: 0.1em solid rgb(0, 0, 0);
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: rgb(2, 238, 73);
+    max-width: inherit;
+    margin: 0 auto 1em;
+    padding: 1em;
+}
+.form-no-bg{
+    position: relative;
+    z-index: 1;
+    max-width: inherit;
+    margin: 0;
+    padding: 1em;
+}
+.form-no-bg input {
+    outline: 0;
+    background: #ffffff;
+    width: 100%;
+    border-radius: 0.6em;
+    border: 0.05em solid black;
+    padding: 0.7em;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-top: -0.6em;
+}
+.profile-form{
+    text-align: left;
+}
+.alert{
+    text-align: center;
+}
+.form input {
+    outline: 0;
+    background: #ffffff;
+    width: 100%;
+    border-radius: 0.6em;
+    border: 0.05em solid black;
+    padding: 0.7em;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-top: -0.6em;
+}
+.submit-button{
+    text-align: center;
+}
+.submit-button button {
+    text-transform: uppercase;
+    outline: 0;
+    background: rgb(61, 63, 61);
+    width: 70%;
+    border-radius: 0.6em;
+    padding: 0.5em;
+    color: #FFFFFF;
+    border: 0 rgb(61, 63, 61);
+    font-size: 1em;
+    cursor: pointer;
+}
+.form button:hover{
+    background: rgb(230, 13, 13);
+}
+.message {
+    padding: 1em;
+    margin: 1em 0 0;
+    color: #b3b3b3;
+    font-size: 1em;
+    text-align: center;
+}
+.message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+h1{
+    color: black;
+}
+
+.tampil-wrap {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    width: 35em;
+    text-align: center;
+}
+.bingkai-foto{
+    text-align: center;
+}
+.foto-profile {
+    height: 7em;
+    width: 7em;
+    border-radius: 50%;
+    margin-bottom: 1.25em;
+    border: 0.1em solid black;
+}
+.foto-link {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    margin-bottom: 1.25em;
+    border: 0.1em solid black;
+}
+.modal-body h5{
+    margin-top: 1em;
+}
+
+#footer{
+    position: relative;
+    height: 3.5em;
+    width: 100%;
+    clear: both;
+    background-color: #00b894;
+    margin-top: -3.5em;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/Blog-Cover.jpg);
+    height: 60em;
+    background-size: cover;
+    background-position: center;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 150%;
+    color: #ffff;
+    /* border : 1em solid #fff; */
+    padding: 1.5em 2em;
+    transition: ease;
+}
+
+ul li a:hover {
+    background-color: #ffff;
+    color: #0000;
+}
+
+.logo img {
+    float: left;
+    padding: 1.5em 2em;
+    width: 10em;
+    height: auto;
+}
+
+.title {
+    text-align: center;
+    position: absolute;
+    top: 20em;
+    left: 25em;
+}
+
+.title h1 {
+    color: #fff;
+    font-size: 3.5em;
+}
+
+.button {
+    text-align: center;
+    position: absolute;
+    top: 35em;
+    left: 43em;
+}
+
+.btn {
+    border: 1em solid #fff;
+    padding: 10px 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.6s ease;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #ffff;
+    color: #000;
+}
+
+.konten {
+    background-image: url(assets/img/bottom.png);
+    height: 70em;
+    background-size: 100%;
+    background-position: center;
+}
+
+.isi {
+    text-align: left;
+    position: absolute;
+    top: 80em;
+    left: 10em;
+}
+
+.isi h2 {
+    color: #000;
+    font-size: 3em;
+}
+
+pre {
+    text-align: left;
+    position: absolute;
+    top: 3em;
+    left: -8em;
+    color: #000;
+    font-size: 2.5em;
+}
+
+@media only screen and (max-width: 425px){
+
+}
+
+@media only screen and (max-width: 375px){
+
+}
+
+@media only screen and (max-width: 320px){
+
+}

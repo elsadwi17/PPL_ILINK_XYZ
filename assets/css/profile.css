@@ -1,0 +1,17 @@
+input[type=text]{
+    height: 15px;
+    padding: 12px 20px;
+    margin: 8px 90px;
+    border: 3px solid #3CBC8D;
+    box-sizing:content-box;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+form{
+    text-align: center;
+}
+text{
+    text-align: left;
+}
