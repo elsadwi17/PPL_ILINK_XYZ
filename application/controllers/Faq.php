@@ -1,11 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Faq extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('home');
+        $data['title'] = 'Faq';
+        $this->load->view('template/navbar', $data);
+        $this->load->view('faq');
         $this->load->view('template/footer');
     }
 }
