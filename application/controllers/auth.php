@@ -97,11 +97,6 @@ class Auth extends CI_Controller
                 'token' => $token
             ];
 
-            $token_daftar = [
-                'email' => $email,
-                'token' => $token
-            ];
-
             $this->db->insert('user', $data);
             // $this->db->insert('pendaftaran', $token_daftar);
 

@@ -33,7 +33,7 @@ class Dashboard extends CI_Controller
             'link' => $this->input->post('link'),
             'username' => $this->session->userdata('username'),
         );
-        $insert = $this->dashboard->tambah($data);
+       $this->dashboard->tambah($data);
         echo json_encode(array("status" => TRUE));
     }
 
