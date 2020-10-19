@@ -14,8 +14,8 @@ class dashboard_model extends CI_Model
     function get_datatables()
     {
         $this->get_datatables_query();
-        if ($_POST['length'] != -1) {
-            $this->db->limit($_POST['length'], $_POST['start']);
+        if ($this->input->post('length')) {
+            $this->db->limit($this->input->post('length'), $this->input->post('start'));
             $query = $this->db->get();
             return $query->result();
         }

@@ -28,10 +28,9 @@ class Profile extends CI_Controller
         } else {
             $nama_depan = htmlspecialchars($this->input->post('nama_depan'));
             $nama_belakang = htmlspecialchars($this->input->post('nama_belakang'));
-            // $email = htmlspecialchars($this->input->post('email'));
             $email = $this->session->userdata('email');
 
-            $upload_image = $_FILES['image']['name'];
+            $upload_image = $_POST['image']['name'];
 
             if ($upload_image) {
                 $config['allowed_types'] = 'gif|jpg|jpeg|png';
@@ -87,7 +86,7 @@ class Profile extends CI_Controller
 
     public function uploadImage()
     {
-        $upload_image = $_FILES['image']['name'];
+        $upload_image = $_POST['image']['name'];
         $email = $this->session->userdata('email');
 
         if ($upload_image) {

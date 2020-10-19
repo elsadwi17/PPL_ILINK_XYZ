@@ -19,9 +19,9 @@ class Dashboard extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function ajax_edit($id)
+    public function ajax_edit($id_ajax)
     {
-        $data = $this->dashboard->get_by_id($id);
+        $data = $this->dashboard->get_by_id($id_ajax);
         echo json_encode($data);
     }
 
@@ -48,9 +48,9 @@ class Dashboard extends CI_Controller
         echo json_encode(array("status"=>TRUE));
     }
 
-    public function ajax_delete($id)
+    public function ajax_delete($id_ajax)
     {
-        $this->dashboard->delete_by_id($id);
+        $this->dashboard->delete_by_id($id_ajax);
         echo json_encode(array("status" => TRUE));
     }
 
