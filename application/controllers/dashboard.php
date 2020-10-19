@@ -73,7 +73,7 @@ class Dashboard extends CI_Controller
         }
         if ($data['status'] === FALSE) {
             echo json_encode($data);
-            exit(5);
+            exit(23);
         }
     }
 }
