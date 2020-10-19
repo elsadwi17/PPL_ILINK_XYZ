@@ -30,9 +30,6 @@ class Profile extends CI_Controller
             $nama_belakang = htmlspecialchars($this->input->post('nama_belakang'));
             $email = $this->session->userdata('email');
 
-            $upload_image = $_POST['image']['name'];
-
-            if ($upload_image) {
                 $config['allowed_types'] = 'gif|jpg|jpeg|png';
                 $config['max_size'] = '2048';
                 $config['upload_path'] = './assets/img/profile';
@@ -52,15 +49,11 @@ class Profile extends CI_Controller
                 } else {
                     $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Foto tidak dapat di upload</div>');
                 }
-            }
 
             $this->db->set('nama_depan', $nama_depan);
             $this->db->set('nama_belakang', $nama_belakang);
-            // $this->db->set('email', $email);
             $this->db->where('email', $email);
             $this->db->update('user');
-
-            // $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Selamat</div>');
             redirect('profile');
         }
     }
@@ -71,7 +64,6 @@ class Profile extends CI_Controller
         $new = $this->input->post('new');
         $password = password_hash($new, PASSWORD_DEFAULT);
         $email = $this->session->userdata('email');
-
         $user = $this->db->get_where('user', ['email' => $email])->row_array();
         if (password_verify($old, $user['password'])) {
             $this->db->set('password', $password);
@@ -86,10 +78,7 @@ class Profile extends CI_Controller
 
     public function uploadImage()
     {
-        $upload_image = $_POST['image']['name'];
         $email = $this->session->userdata('email');
-
-        if ($upload_image) {
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '2048';
             $config['upload_path'] = './assets/img/profile';
@@ -109,9 +98,6 @@ class Profile extends CI_Controller
                 $this->db->update('user');
 
                 redirect('profile');
-            } else {
-                echo $this->upload->display_errors();
-            }
         }
     }
 }
