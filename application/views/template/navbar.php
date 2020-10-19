@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="<?= esc_url (base_url());?>favicon.ico" type="image/gif">
-    <title><?= $title ?></title>
+    <title><?= esc_html ($title )?></title>
     <link rel="stylesheet" href="<?= esc_url (base_url()); ?>assets/css/bootstrap.css">
     <link rel="stylesheet" href="<?= esc_url (base_url()); ?>assets/css/style.css">
     

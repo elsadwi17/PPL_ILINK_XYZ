@@ -32,25 +32,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button id="save" type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                    <!-- <div class="form">
-                        <form class="profile-form" method="post" action="<?= base_url('profile/save'); ?>">
-                            <div class="form-group">
-                                <label for="password-lama">Nama Depan</label>
-                                <input id="password-lama" name="password-lama" />
-                            </div>
-                            <div class="form-group">
-                                <label for="password-baru">Nama Depan</label>
-                                <input id="password-baru" name="password-baru" />
-                            </div>
-                            <div class="form-group">
-                                <label for="konfirmasi-lama">Nama Depan</label>
-                                <input id="konfirmasi-lama" name="konfirmasi-password" />
-                            </div>
-                            <div class="submit-button">
-                                <button type="submit" id="simpan-button">simpan</button>
-                            </div>
-                        </form>
-                    </div> -->
+                   
                 </div>
             </div>
         </div>
@@ -61,12 +43,12 @@
         <div class="container wrap-profile">
             <h2> MY ACCOUNT</h2>
             <div class="form">
-                <form class="profile-form" method="post" action="<?= base_url('profile/save'); ?>" enctype="multipart/form-data">
+                <form class="profile-form" method="post" action="<?= esc_url (base_url('profile/save')); ?>" enctype="multipart/form-data">
                     <?= $this->session->flashdata('pesan'); ?>
 
                     <!-- mulai ini ya -->
                     <div class="form-group">
-                        <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>" class="img-thumbnail">
+                        <img src="<?= esc_url (base_url('assets/img/profile/') . $user['image']); ?>" class="img-thumbnail">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="image" name="image" />
                             <label class="custom-file-label" for="image">Choose file</label>
@@ -108,21 +90,7 @@
                         <button type="submit" class="btn btn-success"id="password-button">Change Password</button>
                     </div>
                 </div>
-                <!-- mulai ini ya -->
-                <!-- <form class="form-image" method="post" action="<?= base_url('profile/uploadImage'); ?>" enctype="multipart/form-data">
-                    <div class="form-group row">
-                        <div class="col-sm-4">
-                            <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>" class="img-thumbnail">
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="image" name="image" />
-                                <label class="custom-file-label" for="image">Choose file</label>
-                                <button type="submit" id="simpan-gambar-button" name="upload_foto">Save</button>
-                            </div>
-                        </div>
-                    </div>
-                </form> -->
+               
             </div>
         </div>
     </div>
