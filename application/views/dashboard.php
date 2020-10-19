@@ -13,50 +13,50 @@
         <div class=link-ci>
         <?php
         $username = $this->session->userdata('username');
-        echo '<a target="_blank" href="' . $username . '">ilinkxyz.com/' . $username . '</a>';
-        echo "</div>";
-        echo "<div class='add-link'>
+        echo esc_url ('<a target="_blank" href="' . $username . '">ilinkxyz.com/' . $username . '</a>');
+        echo esc_url ("</div>");
+        echo esc_url ("<div class='add-link'>
                     <button onclick='tambah_link()' type='button' class='btn btn-primary'>+Tambah Link</button>
-                  </div>";
+                  </div>");
         $query = $this->db->get_where('link', ['username' => $username]);
         if ($query->num_rows() == 0) {
-            echo '<div class="col-md-6 offset-md-3">
+            echo esc_url ('<div class="col-md-6 offset-md-3">
                         <div class="alert alert-danger alert-dashboard">Belum Ada Link yang ditambahkan, Silahkan Tambah Link</div>
-                      </div>';
+                      </div>');
         } else {
-            echo '<div class="link-result">
+            echo esc_url  ('<div class="link-result">
                         <table id="table" class="table table-hover">
                             <tr class="table-success">
                                 <th scope="col">Title</th>
                                 <th scope="col">URL</th>
                                 <th scope="col"></th>
-                            </tr>';
+                            </tr>');
             foreach ($query->result() as $row) {
                 $panjang_link = $row->link;
-                echo '<tr>
-                            <td class="td_first">' . $row->title . '</td>';
+                echo esc_url ('<tr>
+                            <td class="td_first">' . $row->title . '</td>');
                 if (strlen($panjang_link) > 63) {
                     $link = substr($row->link, 0, 60);
                     if (substr($row->link, 0, 4) == 'http') {
-                        echo '<td><a target="_blank" href="' . $row->link . '">' . $link . '...</a></td>';
+                        echo  esc_url ('<td><a target="_blank" href="' . $row->link . '">' . $link . '...</a></td>');
                     } else {
-                        echo '<td><a target="_blank" href="https://' . $row->link . '">' . $link . '...</a></td>';
+                        echo esc_url ('<td><a target="_blank" href="https://' . $row->link . '">' . $link . '...</a></td>');
                     }
                 } else {
                     if (substr($row->link, 0, 4) == 'http') {
-                        echo '<td><a target="_blank" href="' . $row->link . '">' . $row->link . '</a></td>';
+                        echo esc_url('<td><a target="_blank" href="' . $row->link . '">' . $row->link . '</a></td>');
                     } else {
-                        echo '<td><a target="_blank" href="https://' . $row->link . '">' . $row->link . '</a></td>';
+                        echo esc_url  ('<td><a target="_blank" href="https://' . $row->link . '">' . $row->link . '</a></td>');
                     }
                 }
-                echo '<td width="19%">
+                echo esc_url ('<td width="19%">
                                 <a class="btn btn-danger" id="btn-delete" href="javascript:void(0)" title="Hapus" onclick="delete_link(' . "'" . $row->id_link . "'" . ')">Delete</a>
                                 <a class="btn btn-success" id="btn-edit" href="javascript:void(0)" title="Edit" onclick="edit_link(' . "'" . $row->id_link . "'" . ')">Edit</a>
                             </td>
-                         </tr>';
+                         </tr>');
             }
-            echo '  </table>
-                     </div>';
+            echo esc_url ('  </table>
+                     </div>');
         }
     }
         ?>
@@ -83,7 +83,7 @@
                 $('#btnAdd').text('Save');
 
                 $.ajax({
-                    url: "<?php echo site_url('dashboard/ajax_edit/') ?>/" + id,
+                    url: "<?php echo esc_url('dashboard/ajax_edit/') ?>/" + id,
                     type: "GET",
                     dataType: "JSON",
                     success: function(data) {
@@ -104,9 +104,9 @@
                 $('#btnAdd').attr('disabled', true);
 
                 if (save_method == 'add') {
-                    url = "<?php echo site_url('dashboard/ajax_tambah') ?>";
+                    url = "<?php echo esc_url('dashboard/ajax_tambah') ?>";
                 } else if (save_method == 'update') {
-                    url = "<?php echo site_url('dashboard/ajax_update') ?>";
+                    url = "<?php echo esc_url('dashboard/ajax_update') ?>";
                 }
 
                 $.ajax({
@@ -138,7 +138,7 @@
             function delete_link(id) {
                 if (confirm('Anda yakin akan menghapus data ini?')) {
                     $.ajax({
-                        url: "<?php echo site_url('dashboard/ajax_delete') ?>/" + id,
+                        url: "<?php echo esc_url('dashboard/ajax_delete') ?>/" + id,
                         type: "POST",
                         dataType: "JSON",
                         success: function(data) {

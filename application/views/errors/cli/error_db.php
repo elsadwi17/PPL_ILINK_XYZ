@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-echo "\nDatabase error: ",
+echo esc_html ("\nDatabase error: ",
 	$heading,
 	"\n\n",
 	$message,
-	"\n\n";
+	"\n\n");

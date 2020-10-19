@@ -2,7 +2,7 @@
     <div id="content">
         <div class="container emp-profile">
             <?php
-            $username = $this->uri->segment(1);
+            $username = $this->url->segment(1);
             $query = $this->db->get_where('link', ['username' => $username]);
             if ($query->num_rows() == 0) {
                 echo '
@@ -23,9 +23,9 @@
                         if (substr($row->link, 0, 4) == 'http') {
                             echo '<a class="btn btn-primary btn-tampil" target="_blank" href="' . $row->link . '">' . $row->title . '</a>';
                         } else {
-                            echo '<a class="btn btn-primary btn-tampil" target="_blank" href="https://' . $row->link . '">' . $row->title . '</a>';
+                            echo esc_url('<a class="btn btn-primary btn-tampil" target="_blank" href="https://' . $row->link . '">' . $row->title . '</a>');
                         }
-                        echo '</div>';
+                        echo esc_url ('</div>');
                     }
                 }
                 ?>

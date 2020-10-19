@@ -3,7 +3,7 @@
     <div class="container tampil-wrap">
         <div class="row">
             <div class="col-sm-4">
-                <img src="<?= base_url('assets/img/profile/') ?>default.png" class="img-thumbnail">
+                <img src="<?= esc_url (base_url('assets/img/profile/')); ?>default.png" class="img-thumbnail">
             </div>
             <div class="col-sm-7">
                 <div class="custom-file">
