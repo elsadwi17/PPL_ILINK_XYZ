@@ -11,7 +11,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="row section-success ourTeam-box text-center">
                     <div class="col-md-12 section1">
-                        <img src="<?= base_url(); ?>assets/img/sukma1.jpg">
+                        <img src="<?= esc_url(base_url()); ?>assets/img/sukma1.jpg">
                     </div>
                     <div class="col-md-12 section2">
                         <p>SUKMA AJI Y</p><br>
@@ -33,7 +33,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="row section-info ourTeam-box text-center">
                     <div class="col-md-12 section1">
-                        <img src="<?= base_url(); ?>assets/img/mufid.jpg">
+                        <img src="<?= esc_url(base_url()); ?>assets/img/mufid.jpg">
                     </div>
                     <div class="col-md-12 section2">
                         <p>AHMAD MUFID</p><br>
@@ -56,7 +56,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="row section-danger ourTeam-box text-center">
                     <div class="col-md-12 section1">
-                        <img src="<?= base_url(); ?>assets/img/elsa.jpg">
+                        <img src="<?= esc_url(base_url()); ?>assets/img/elsa.jpg">
                     </div>
                     <div class="col-md-12 section2">
                         <p>ELSA DWI</p><br>
@@ -78,7 +78,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="row section-warning ourTeam-box text-center">
                     <div class="col-md-12 section1">
-                        <img src="<?= base_url(); ?>assets/img/yolanda.jpg">
+                        <img src="<?= esc_url(base_url()); ?>assets/img/yolanda.jpg">
                     </div>
                     <div class="col-md-12 section2">
                         <p>YOLANDA OP</p><br>

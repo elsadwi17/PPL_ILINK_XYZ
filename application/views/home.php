@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>iLink</title>
 
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
-    <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= esc_url (base_url()); ?>assets/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= esc_url (base_url()); ?>assets/css/style.css">
+    <link rel="shortcut icon" href="<?= esc_url (base_url()); ?>assets/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -18,15 +18,15 @@
         <header>
             <?php if (!$this->session->userdata('email')) { ?>
                 <div class="main">
-                    <a class="logo" href="<?= base_url(); ?>">
+                    <a class="logo" href="<?= esc_url (base_url()); ?>">
                         <img src="assets/img/Logo_ILINK.png">
                     </a>
                     <ul>
                         <li><a href="#">Home</a> </li>
-                        <li><a href="<?= base_url('about'); ?>">About</a> </li>
-                        <li><a href="<?= base_url('auth'); ?>">Login</a>
+                        <li><a href="<?= esc_url (base_url('about')); ?>">About</a> </li>
+                        <li><a href="<?= esc_url (base_url('auth')); ?>">Login</a>
                         </li>
-                        <li><a href="<?= base_url('auth/registration'); ?>">Sign Up</a>
+                        <li><a href="<?= esc_url (base_url('auth/registration')); ?>">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -35,18 +35,18 @@
                     <h1> MENGELOLA AKUNMU DISINI ! </h1>
                 </div>
                 <div class="button-home">
-                    <a href="<?= base_url('auth/registration') ?>" class="btn">SIGN UP FREE!</a>
+                    <a href="<?= esc_url (base_url('auth/registration')); ?>" class="btn">SIGN UP FREE!</a>
                 </div>
             <?php } else { ?>
                 <div class="main">
-                    <a class="logo" href="<?= base_url(); ?>">
+                    <a class="logo" href="<?= esc_url (base_url()); ?>">
                         <img src="assets/img/Logo_ILINK.png">
                     </a>
                     <ul>
                         <li><a href="#">Home</a> </li>
-                        <li><a href="<?= base_url('profile') ?>">Profile</a>
+                        <li><a href="<?= esc_url (base_url('profile')); ?>">Profile</a>
                         </li>
-                        <li><a href="<?= base_url('auth/logout') ?>">Logout</a>
+                        <li><a href="<?= esc_url (base_url('auth/logout')); ?>">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -55,7 +55,7 @@
                     <h1> MENGELOLA AKUNMU DISINI ! </h1>
                 </div>
                 <div class="button-home">
-                    <a href="<?= base_url('dashboard') ?>" class="btn">ADD LINK</a>
+                    <a href="<?= esc_url (base_url('dashboard')); ?>" class="btn">ADD LINK</a>
                 </div>
             <?php } ?>
         </header>
