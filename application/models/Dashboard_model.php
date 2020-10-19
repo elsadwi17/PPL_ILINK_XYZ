@@ -21,10 +21,10 @@ class dashboard_model extends CI_Model
         }
     }
 
-    public function get_by_id($id)
+    public function get_by_id($id_link)
     {
         $this->db->from($this->table);
-        $this->db->where('id_link', $id);
+        $this->db->where('id_link', $id_link);
         $query = $this->db->get();
         return $query->row();
     }
@@ -41,9 +41,9 @@ class dashboard_model extends CI_Model
         return $this->db->affected_rows();    
     }
     
-    public function delete_by_id($id)
+    public function delete_by_id($id_link)
     {
-        $this->db->where('id_link', $id);
+        $this->db->where('id_link', $id_link);
         $this->db->delete($this->table);
     }
 }
