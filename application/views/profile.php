@@ -40,12 +40,12 @@
         <div class="container wrap-profile">
             <h2> MY ACCOUNT</h2>
             <div class="form">
-                <form class="profile-form" method="post" action="<?= esc_url (base_url('profile/save')); ?>" enctype="multipart/form-data">
-                    <?= esc_html ($this->session->flashdata('pesan')); ?>
+                <form class="profile-form" method="post" action="<?= base_url('profile/save'); ?>" enctype="multipart/form-data">
+                    <?= $this->session->flashdata('pesan'); ?>
 
                     <!-- mulai ini ya -->
                     <div class="form-group">
-                        <img src="<?= esc_url (base_url('assets/img/profile/') . $user['image']); ?>" class="img-thumbnail">
+                        <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" class="img-thumbnail">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="image" name="image" />
                             <label class="custom-file-label" for="image">Choose file</label>
@@ -55,11 +55,11 @@
 
                     <div class="form-group">
                         <label for="nama_depan">Nama Depan</label>
-                        <input id="nama_depan" name="nama_depan" minlength="3" value="<?= $user['nama_depan'] ?>" disabled />
+                        <input id="nama_depan" name="nama_depan" minlength="3" value="<?= esc_attr ($user['nama_depan']);?>" disabled />
                     </div>
                     <div class="form-group">
                         <label for="nama_belakang">Nama Belakang</label>
-                        <input id="nama_belakang" name="nama_belakang" minlength="3" value="<?= $user['nama_belakang'] ?>" disabled />
+                        <input id="nama_belakang" name="nama_belakang" minlength="3" value="<?= esc_attr ($user['nama_belakang']); ?>" disabled />
                     </div>
                     <div class="form-group">
                         <label for="username">Username</label>
