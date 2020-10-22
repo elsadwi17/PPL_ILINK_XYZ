@@ -40,12 +40,12 @@
         <div class="container wrap-profile">
             <h2> MY ACCOUNT</h2>
             <div class="form">
-                <form class="profile-form" method="post" action="<?= base_url('profile/save'); ?>" enctype="multipart/form-data">
+                <form class="profile-form" method="post" action="<?= esc_url (base_url('profile/save')); ?>" enctype="multipart/form-data">
                     <?= esc_html ($this->session->flashdata('pesan')); ?>
 
                     <!-- mulai ini ya -->
                     <div class="form-group">
-                        <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" class="img-thumbnail">
+                        <img src="<?=esc_url (base_url('assets/img/profile/') . $user['image']); ?>" class="img-thumbnail">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="image" name="image" />
                             <label class="custom-file-label" for="image">Choose file</label>
