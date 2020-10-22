@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Severity: <?php echo esc_attr ($severity); ?></p>
 <p>Message:  <?php echo esc_attr ($message); ?></p>
 <p>Filename: <?php echo esc_attr ($filepath); ?></p>
-<p>Line Number: <?php echo $line; ?></p>
+<p>Line Number: <?php echo esc_attr ($line); ?></p>
 
 <?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
 

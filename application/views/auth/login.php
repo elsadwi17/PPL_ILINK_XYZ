@@ -9,7 +9,7 @@
                     <?= esc_html ($this->session->flashdata('pesan')); ?>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input class="form-control" id="email" name="email" type="email" maxlength="50" value="<?= set_value('email'); ?>" />
+                        <input class="form-control" id="email" name="email" type="email" maxlength="50" value="<?= esc_attr (set_value('email')); ?>" />
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

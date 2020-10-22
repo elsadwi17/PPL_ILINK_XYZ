@@ -7,7 +7,7 @@
             <h1>MY LINK</h1>
             <div class='bingkai-foto'>
                 <?php $user = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(); ?>
-                <img class='foto-profile' src='<?= base_url('assets/img/profile/') . $user['image'] ?>'>
+                <img class='foto-profile' src='<?= esc_url (base_url('assets/img/profile/') . $user['image']); ?>'>
             </div>
         </div>
         <div class=link-ci>
