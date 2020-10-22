@@ -41,7 +41,7 @@
             <h2> MY ACCOUNT</h2>
             <div class="form">
                 <form class="profile-form" method="post" action="<?= base_url('profile/save'); ?>" enctype="multipart/form-data">
-                    <?= $this->session->flashdata('pesan'); ?>
+                    <?= esc_html ($this->session->flashdata('pesan')); ?>
 
                     <!-- mulai ini ya -->
                     <div class="form-group">
