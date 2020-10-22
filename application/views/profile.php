@@ -21,10 +21,7 @@
                     <h5 class="modal-title">Reset password</h5>
                 </div>
                 <div class="modal-body">
-                    <!-- <div class="form-group">
-                        <label for="nama_depan">Nama Depan</label>
-                        <input id="nama_depan" name="nama_depan" minlength="3" value="<?= $user['nama_depan'] ?>" disabled />
-                    </div> -->
+                   
                     <h5>Password Lama</h5><input id="old-password" type="password" class="form-control" maxlength='20' value="">
                     <h5>Password Baru</h5><input id="new-password" type="password" class="form-control" maxlength='20' value="">
                     <h5>Konfirmasi Password Baru</h5><input id="re-new-password" type="password" class="form-control" maxlength='20' value="">
@@ -44,7 +41,7 @@
             <h2> MY ACCOUNT</h2>
             <div class="form">
                 <form class="profile-form" method="post" action="<?= esc_url (base_url('profile/save')); ?>" enctype="multipart/form-data">
-                    <?= $this->session->flashdata('pesan'); ?>
+                    <?= esc_ur_html ($this->session->flashdata('pesan')); ?>
 
                     <!-- mulai ini ya -->
                     <div class="form-group">
@@ -66,15 +63,15 @@
                     </div>
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input id="username" name="username" value="<?= $user['username'] ?>" disabled />
+                        <input id="username" name="username" value="<?= esc_attr ($user['username']); ?>" disabled />
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input id="email" name="email" value="<?= $user['email'] ?>" disabled />
+                        <input id="email" name="email" value="<?= esc_attr ($user['email']); ?>" disabled />
                     </div>
                     <div class="form-group">
                         <label for="i-link">i-Link</label>
-                        <input id="i-link" name="i-link" value="ilinkxyz.com/<?= $user['username'] ?>" disabled />
+                        <input id="i-link" name="i-link" value="ilinkxyz.com/<?= esc_attr ($user['username']);?>" disabled />
                     </div>
                     <div class="row justify-content-end">
                         <div class="col-auto">
